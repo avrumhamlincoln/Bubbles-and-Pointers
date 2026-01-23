@@ -22,7 +22,6 @@ sort():
     
 
 swap():
-    temp = 0
-    x = temp
+    temp = x
     x = y
     y = temp
