@@ -13,17 +13,12 @@ printValues():
         print(i, space)
 
 sort():
-    step = 0
-    for i in values:
-        values[step] = x
-        values[step + 1] = y
-        
-        if x > y:
-            swap()
-            step += 1
-
-        else:
-            step += 1
+    create integer variables i and j
+    for i from zero to MAX - 1:
+        for j from zero to MAX - 1:
+            if array[j] > array[j+1]:
+                swap array[j] with array[j+1]
+                printArray(array)
     
 
 swap():

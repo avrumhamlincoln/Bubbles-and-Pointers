@@ -3,7 +3,7 @@ const int MAX=9;
 
 void printValues(int*);
 void sort(int*);
-void swap(int*, int*);
+void swap(int* , int*);
 
 int main(){
 	int values[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
@@ -24,38 +24,27 @@ int main(){
   	return(0);
 } // end main
 
-int printValues(){
-	for (i = 0; i < MAX; i++){
+void printValues(int* values){
+	for (int i = 0; i < MAX; i++){
 		printf("%d, ", values[i]);
 	}
 
 	printf("\n");
-
 } // end printValues
 
-int sort(){
-	step = 0;
-	for (i = 0; i < 8; i++){
-		values[step] = x;
-		values[step + 1] = y;
-
-		if (x > y){
-			swap();
-			step += 1;
-		}
-
-		else {
-			step += 1;
+void sort(int* values){
+	for (int i = 0; i < MAX - 1; i++) {
+		for (int j = 0; j < MAX - 1; j++){
+			if (values[j] > values [j + 1]) {
+				swap(&values[j], &values[j + 1]);
+				printValues(values);
+			}
 		}
 	}
-
-
 } // end sort
 
-int swap(){
-	temp = 0;
-	x = temp;
-	x = y;
-	y = temp;
-
+void swap(int* x, int* y){
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 } // end swap
